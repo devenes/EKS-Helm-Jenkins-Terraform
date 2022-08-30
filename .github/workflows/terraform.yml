@@ -57,7 +57,7 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: |
-          terraform validate -no-color -input=false
+          terraform validate -no-color
 
       - name: Validate Output
         id: validate-output
