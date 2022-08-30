@@ -58,11 +58,12 @@ jobs:
         id: validate
         run: |
           terraform validate -no-color -input=false
-          if [ $? -eq 0 ]; then
-              echo "Validation successful"
-          else
-              echo "Validation failed"
-          fi
+
+      - name: Validate Output
+        id: validate-output
+        if: steps.validate.outcome != 'failure' && steps.fmt.outcome != 'failure'
+        run: |
+          echo "Validation successful"
 
       - name: Terraform Plan
         id: plan
