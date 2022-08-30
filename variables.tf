@@ -105,4 +105,3 @@ variable "dev1_subnet_nic_private_ip" {
   description = "CIDR block of subnet 1 to create."
   default     = ["10.0.1.50"]
 }
-
